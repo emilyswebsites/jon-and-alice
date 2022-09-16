@@ -11,14 +11,18 @@
     </div>
     <TopMenu></TopMenu>
     <main>
-      <section>
-        <p>Hello friends and family,</p>
-        <br>
-        <p>We would love you to come and celebrate our wedding with us. Please RSVP before Xth Month YYYY.</p>
-        <br>
-        <p>See you soon!</p>
-        <p>Alice & Jon</p>
-        <button>RSVP</button>
+      <section class="couples-note">
+        <div class="card">
+          <div class="card__inner-wrapper">
+            <p>Hello friends and family,</p>
+            <br>
+            <p>We would love you to come and celebrate our wedding with us. Please RSVP before Xth Month YYYY.</p>
+            <br>
+            <p>See you soon!</p>
+            <p>Alice & Jon</p>
+            <button class="button">RSVP</button>
+          </div>
+        </div>
       </section>
       <section>
         <h2>Schedule</h2>
@@ -100,6 +104,32 @@ export default Vue.extend({
 .hero__subtitle {
   font-family: var(--font-heading);
   font-size: 2rem;
+}
+
+.couples-note {
+  padding: 4rem;
+  width: 100%;
+}
+
+.card {
+  margin: auto;
+  text-align: center;
+  max-width: 50rem;
+  width: 100%;
+  min-width: min-content;
+  font-family: var(--font-scripty);
+  // font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  p {
+    margin: 0;
+  }
+}
+
+.button {
+  font-size: 1.25rem;
+  margin: 2rem auto 0;
 }
 
 img {
