@@ -20,7 +20,7 @@
             <br>
             <p>See you soon!</p>
             <p>Alice & Jon</p>
-            <button class="button">RSVP</button>
+            <NuxtLink to="rsvp" class="button">RSVP</NuxtLink>
           </div>
         </div>
       </section>
@@ -118,7 +118,6 @@ export default Vue.extend({
   width: 100%;
   min-width: min-content;
   font-family: var(--font-scripty);
-  // font-weight: 600;
   font-size: 1rem;
   line-height: 1.6;
 

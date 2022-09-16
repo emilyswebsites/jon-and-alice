@@ -76,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 100ms linear;
   border: 0;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background-color: var(--clr-blue-dark);
