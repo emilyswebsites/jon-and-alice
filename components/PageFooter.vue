@@ -1,10 +1,10 @@
 <template>
   <footer>
-    <p>Copyright &copy; <span>{{ new Date().getFullYear() }}</span> Emily's Websites</p>
-    <div>
-      <span>Powered by</span>
+    <p class="copyright">Copyright &copy; <span>{{ new Date().getFullYear() }}</span> Emily's Websites</p>
+    <div class="emilys-websites">
+      <span class="emilys-websites__powered-by">Powered by</span>
       <a href="https://emilyswebsites.com" target="_blank" aria-label="Emily's Websites">
-        <svg viewBox="0 0 212.84 60.91">
+        <svg class="emilys-websites__logo" viewBox="0 0 212.84 60.91">
           <g>
             <!-- Yellow rectangle -->
             <rect class="svg-colour-rectangle" x="36.78" y="99.68" width="45.28" height="45.28" rx="6.81"
@@ -76,8 +76,39 @@ export default {
 </script>
 
 <style lang="scss">
+footer {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  background-color: beige;
+  align-items: center;
+}
+
+.copyright {
+  grid-column: 2 / 3;
+  width: 100%;
+  text-align: center;
+}
+
+.emilys-websites {
+  grid-column: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+}
+
+.emilys-websites__powered-by {
+  margin-right: 1rem;
+}
+
+.emilys-websites__logo {
+  display: block;
+  height: 2.5rem;
+}
+
 .svg-colour-text {
-  fill: #353738;
+  fill: var(--clr-beige-dark);
 }
 
 .svg-colour-rectangle {
@@ -85,6 +116,6 @@ export default {
 }
 
 .svg-colour-image {
-  fill: #fff;
+  fill: var(--clr-white);
 }
 </style>

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Petit+Formal+Script&family=Petrona&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  --font-scripty: 'Petit Formal Script', cursive;
+  --font-body: 'Petrona', serif;
+  --font-heading: 'DM Serif Display', serif;
+
+  --clr-white: #fff;
+  --clr-blue-medium: #8BC5FA;
+
+  --clr-beige-light: #F1EDE1;
+  --clr-beige-medium: #E8E2CD;
+  --clr-beige-dark: #817038;
+  --clr-beige-light-translucent: #f1ede1cc;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--clr-beige-dark);
+  margin: 0;
+}
