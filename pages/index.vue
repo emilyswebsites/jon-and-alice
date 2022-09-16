@@ -2,9 +2,11 @@
   <div>
     <div class="hero">
       <h1 class="hero__banner">
-        <span>13th May 2023</span>
-        <span>Jon & Alice</span>
-        <span>are getting married</span>
+        <div class="hero__banner-content">
+          <span class="hero__date linethrough"><span></span><span class="linethrough__content">13th May 2023</span><span></span></span>
+          <span class="hero__title">Jon & Alice</span>
+          <span class="hero__subtitle linethrough"><span></span><span class="linethrough__content">are getting married</span><span></span></span>
+        </div>
       </h1>
     </div>
     <TopMenu></TopMenu>
@@ -53,7 +55,54 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-  img {
-    width: 20rem;
+.hero {
+  background-image: url(/photos/hero-image.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 5rem 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.hero__banner {
+  padding: 4rem;
+  background-color: var(--clr-beige-light-translucent);
+  box-shadow: var(--shadow-subtle);
+}
+
+.hero__banner-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+
+  > * {
+    line-height: 1;
   }
+}
+
+.hero__date {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+}
+
+.hero__title {
+  font-family: var(--font-scripty);
+  font-size: 6rem;
+  margin: 2rem 0;
+}
+
+.hero__subtitle {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+}
+
+img {
+  width: 20rem;
+}
 </style>
