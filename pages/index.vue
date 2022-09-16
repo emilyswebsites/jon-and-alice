@@ -25,9 +25,11 @@
         </div>
       </section>
       <section>
-        <h2>Schedule</h2>
+        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Schedule</span><span></span></h2>
         <div>
-          <img src="photos/wedding-ring.jpg" alt="Wedding Ring">
+          <div class="framed-media">
+            <img class="framed-media__content" src="photos/wedding-ring.jpg" alt="Wedding Ring">
+          </div>
           <h3>The Ceremony</h3>
           <div>
             <span>When:</span>
@@ -131,7 +133,8 @@ export default Vue.extend({
   margin: 2rem auto 0;
 }
 
-img {
-  width: 20rem;
+.framed-media {
+  width: 12rem;
+  height: 12rem;
 }
 </style>
