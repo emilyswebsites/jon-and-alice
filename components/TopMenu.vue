@@ -16,6 +16,11 @@
 </script>
 
 <style lang="scss">
+  nav {
+    position: sticky;
+    top: 0;
+  }
+
   ul {
     list-style: none;
     display: flex;
