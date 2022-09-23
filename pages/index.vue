@@ -26,22 +26,64 @@
       </section>
       <section>
         <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Schedule</span><span></span></h2>
-        <div>
-          <div class="framed-media">
-            <img class="framed-media__content" src="photos/wedding-ring.jpg" alt="Wedding Ring">
+        <div class="schedule__events">
+          <div class="schedule__event">
+            <div class="event__image framed-media">
+              <img class="framed-media__content" src="photos/wedding-ring.jpg" alt="Wedding Ring">
+            </div>
+            <div class="event__text">
+              <h3 class="event__heading">The Ceremony</h3>
+              <div class="event__detail">
+                <span class="detail__label">When:</span>
+                <span class="detail__value">XX:00</span>
+              </div>
+              <div class="event__detail">
+                <span class="detail__label">Where:</span>
+                <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
+              </div>
+              <p class="event__additional-info">
+                Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
+              </p>
+            </div>
           </div>
-          <h3>The Ceremony</h3>
-          <div>
-            <span>When:</span>
-            <span>XX:00</span>
+          <div class="schedule__event">
+            <div class="event__image framed-media">
+              <img class="framed-media__content" src="photos/bouquet.jpg" alt="Wedding Ring">
+            </div>
+            <div class="event__text">
+              <h3 class="event__heading">The Reception</h3>
+              <div class="event__detail">
+                <span class="detail__label">When:</span>
+                <span class="detail__value">XX:00</span>
+              </div>
+              <div class="event__detail">
+                <span class="detail__label">Where:</span>
+                <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
+              </div>
+              <p class="event__additional-info">
+                Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
+              </p>
+            </div>
           </div>
-          <div>
-            <span>Where:</span>
-            <span>A Part of Venue at The Great Tythe Barn, Tetbury</span>
+          <div class="schedule__event">
+            <div class="event__image framed-media">
+              <img class="framed-media__content" src="photos/champagne.jpg" alt="Wedding Ring">
+            </div>
+            <div class="event__text">
+              <h3 class="event__heading">The Evening Party</h3>
+              <div class="event__detail">
+                <span class="detail__label">When:</span>
+                <span class="detail__value">XX:00</span>
+              </div>
+              <div class="event__detail">
+                <span class="detail__label">Where:</span>
+                <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
+              </div>
+              <p class="event__additional-info">
+                Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
+              </p>
+            </div>
           </div>
-          <p>
-            Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
-          </p>
         </div>
       </section>
     </main>
@@ -133,8 +175,55 @@ export default Vue.extend({
   margin: 2rem auto 0;
 }
 
-.framed-media {
+.schedule__events {
+  width: 100%;
+  padding: 4rem;
+}
+
+.schedule__event {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 50rem;
+  max-width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+.event__image {
   width: 12rem;
   height: 12rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.event__text {
+  margin-left: 2rem;
+}
+
+.event__heading {
+  font-family: var(--font-scripty);
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+}
+
+.event__detail {
+  margin-bottom: 1rem;
+}
+
+.detail__label {
+  display: inline-block;
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+.detail__value {
+
+}
+
+.event__additional-info {
+  margin: 0;
 }
 </style>
