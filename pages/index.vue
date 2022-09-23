@@ -117,7 +117,7 @@ export default Vue.extend({
 }
 
 .hero__banner {
-  padding: 4rem;
+  padding: 4rem 2rem;
   background-color: var(--clr-beige-light-translucent);
   box-shadow: var(--shadow-subtle);
 }
@@ -143,6 +143,7 @@ export default Vue.extend({
   font-family: var(--font-scripty);
   font-size: 6rem;
   margin: 2rem 0;
+  text-align: center;
 }
 
 .hero__subtitle {
@@ -225,5 +226,33 @@ export default Vue.extend({
 
 .event__additional-info {
   margin: 0;
+}
+
+@media screen and (max-width:768px) {
+  .hero__title {
+    font-size: 4rem;
+  }
+
+  .hero__date {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__date {
+    font-size: 1.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
 }
 </style>
