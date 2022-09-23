@@ -83,6 +83,7 @@ footer {
   width: 100%;
   background-color: beige;
   align-items: center;
+  box-shadow: var(--shadow-subtle);
 }
 
 .copyright {
