@@ -1,4 +1,4 @@
-# jon-and-alice
+# Alice & Jon
 
 ## Build Setup
 

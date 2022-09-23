@@ -4,7 +4,7 @@
       <h1 class="hero__banner">
         <div class="hero__banner-content">
           <span class="hero__date linethrough"><span></span><span class="linethrough__content">13th May 2023</span><span></span></span>
-          <span class="hero__title">Jon & Alice</span>
+          <span class="hero__title">Alice & Jon</span>
           <span class="hero__subtitle linethrough"><span></span><span class="linethrough__content">are getting married</span><span></span></span>
         </div>
       </h1>
