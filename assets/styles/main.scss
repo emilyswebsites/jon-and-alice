@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
     .linethrough__content {
       flex: 1 0 auto;
       padding: 0 1em;
+
+      @media screen and (max-width:500px) {
+        padding: 0 .5em;
+      }
     }
 
     :first-child, :last-child {
@@ -62,12 +66,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: .5rem;
     border: 2px dashed var(--clr-beige-medium);
     padding: 1rem 2rem;
+
+    @media screen and (max-width:500px) {
+      padding: 1rem;
+    }
   }
 }
 
 .button {
   display: block;
-  width: 10rem;
+  width: 8em;
   padding: 0.7em 1em;
   font-family: var(--font-heading);
   filter: var(--shadow-subtle);
@@ -89,6 +97,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   padding: 0px 1rem;
   margin: .5rem 0;
+
+  @media screen and (max-width:500px) {
+    padding: 0px 0.5rem;
+  }
 }
 
 .framed-media {

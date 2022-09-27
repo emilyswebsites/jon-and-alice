@@ -239,7 +239,8 @@ export default Vue.extend({
     font-size: 1.5rem;
   }
 
-  .schedule__events {
+  .schedule__events,
+  .couples-note {
     padding: 4rem 2rem;
   }
 }
@@ -254,6 +255,10 @@ export default Vue.extend({
   }
 
   .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .button {
     font-size: 1rem;
   }
 
