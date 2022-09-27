@@ -185,12 +185,9 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   margin: auto;
+  margin-bottom: 5rem;
   width: 50rem;
   max-width: 100%;
-
-  &:not(:last-child) {
-    margin-bottom: 5rem;
-  }
 }
 
 .event__image {
@@ -211,6 +208,7 @@ export default Vue.extend({
 }
 
 .event__detail {
+  display: flex;
   margin-bottom: 1rem;
 }
 
@@ -240,6 +238,10 @@ export default Vue.extend({
   .hero__subtitle {
     font-size: 1.5rem;
   }
+
+  .schedule__events {
+    padding: 4rem 2rem;
+  }
 }
 
 @media screen and (max-width:500px) {
@@ -253,6 +255,22 @@ export default Vue.extend({
 
   .hero__subtitle {
     font-size: 1rem;
+  }
+
+  .schedule__event {
+    flex-direction: column;
+  }
+
+  .event__image {
+    margin-bottom: 2rem;
+  }
+
+  .event__text {
+    margin: 0;
+  }
+
+  .event__heading {
+    text-align: center;
   }
 }
 </style>
