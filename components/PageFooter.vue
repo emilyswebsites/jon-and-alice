@@ -80,6 +80,7 @@ footer {
   padding: 1rem 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: ". copyright logo";
   width: 100%;
   background-color: beige;
   align-items: center;
@@ -87,13 +88,12 @@ footer {
 }
 
 .copyright {
-  grid-column: 2 / 3;
-  width: 100%;
-  text-align: center;
+  grid-area: copyright;
+  justify-self: center;
 }
 
 .emilys-websites {
-  grid-column: 3 / 4;
+  grid-area: logo;
   display: flex;
   align-items: center;
   justify-self: end;
@@ -101,6 +101,7 @@ footer {
 
 .emilys-websites__powered-by {
   margin-right: 1rem;
+  white-space: nowrap;
 }
 
 .emilys-websites__logo {
@@ -118,5 +119,33 @@ footer {
 
 .svg-colour-image {
   fill: var(--clr-white);
+}
+
+@media screen and (max-width:850px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'copyright logo';
+  }
+
+  .copyright {
+    justify-self: start;
+  }
+}
+
+@media screen and (max-width:600px) {
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'copyright' 'logo';
+  }
+
+  .copyright {
+    justify-self: center;
+    margin-bottom: 2rem;
+  }
+
+  .emilys-websites {
+    justify-self: center;
+    margin-bottom: 1rem;
+  }
 }
 </style>
