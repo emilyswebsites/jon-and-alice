@@ -151,6 +151,12 @@ export default Vue.extend({
   font-size: 2rem;
 }
 
+main {
+  background-image: url(/background-pattern.svg);
+  background-size: 600px;
+  background-position: top right;
+}
+
 .couples-note {
   padding: 4rem;
   width: 100%;
@@ -188,6 +194,7 @@ export default Vue.extend({
   margin-bottom: 5rem;
   width: 50rem;
   max-width: 100%;
+  background: var(--clr-beige-light);
 }
 
 .event__image {

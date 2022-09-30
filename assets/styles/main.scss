@@ -97,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   padding: 0px 1rem;
   margin: .5rem 0;
+  background: var(--clr-beige-light);
 
   @media screen and (max-width:500px) {
     padding: 0px 0.5rem;
