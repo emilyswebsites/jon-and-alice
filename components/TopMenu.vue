@@ -1,5 +1,6 @@
 <template>
   <header>
+    <h1 v-if="!hideTitle" class="header__title">Alice & Jon</h1>
     <div class="mobile-header">
       <div class="mobile-header__dummy"></div>
       <img class="mobile-header__icon" src="a-and-j-icon.svg" alt="Alice & Jon">
@@ -32,6 +33,9 @@
 <script>
 export default {
   name: 'TopMenu',
+  props: {
+    hideTitle: Boolean,
+  },
   data() {
     return {
       showMenu: false,
@@ -52,6 +56,14 @@ header {
   background-color: var(--clr-beige-light);
   box-shadow: var(--shadow-subtle);
   z-index: 10;
+}
+
+.header__title {
+  font-family: var(--font-scripty);
+  font-size: 2.5rem;
+  padding: 1.5rem 2rem 0.5rem;
+  margin: 0;
+  text-align: center;
 }
 
 .mobile-header {
@@ -107,7 +119,7 @@ li {
     border-width: 1px 0;
   }
 
-  &:not(.nuxt-link-active) {
+  &:not(.nuxt-link-exact-active) {
     &::before {
       transition: transform 250ms ease-out, opacity 250ms ease-out;
       transform: scaleX(0);
@@ -125,6 +137,10 @@ li {
 @media screen and (max-width:768px) {
   header {
     padding: 1.5rem;
+  }
+
+  .header__title {
+    display: none;
   }
 
   .mobile-header {

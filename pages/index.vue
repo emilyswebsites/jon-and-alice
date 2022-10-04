@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <div class="hero">
       <h1 class="hero__banner">
         <div class="hero__banner-content">
@@ -9,7 +9,7 @@
         </div>
       </h1>
     </div>
-    <TopMenu></TopMenu>
+    <TopMenu hide-title></TopMenu>
     <main>
       <section class="couples-note">
         <div class="card">
@@ -33,15 +33,15 @@
             </div>
             <div class="event__text">
               <h3 class="event__heading">The Ceremony</h3>
-              <div class="event__detail">
+              <div class="detail">
                 <span class="detail__label">When:</span>
                 <span class="detail__value">XX:00</span>
               </div>
-              <div class="event__detail">
+              <div class="detail">
                 <span class="detail__label">Where:</span>
                 <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
               </div>
-              <p class="event__additional-info">
+              <p class="detail event__additional-info">
                 Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
               </p>
             </div>
@@ -52,15 +52,15 @@
             </div>
             <div class="event__text">
               <h3 class="event__heading">The Reception</h3>
-              <div class="event__detail">
+              <div class="detail">
                 <span class="detail__label">When:</span>
                 <span class="detail__value">XX:00</span>
               </div>
-              <div class="event__detail">
+              <div class="detail">
                 <span class="detail__label">Where:</span>
                 <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
               </div>
-              <p class="event__additional-info">
+              <p class="detail event__additional-info">
                 Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
               </p>
             </div>
@@ -71,15 +71,15 @@
             </div>
             <div class="event__text">
               <h3 class="event__heading">The Evening Party</h3>
-              <div class="event__detail">
+              <div class="detail">
                 <span class="detail__label">When:</span>
                 <span class="detail__value">XX:00</span>
               </div>
-              <div class="event__detail">
+              <div class="detail">
                 <span class="detail__label">Where:</span>
                 <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
               </div>
-              <p class="event__additional-info">
+              <p class="detail event__additional-info">
                 Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
               </p>
             </div>
@@ -217,16 +217,6 @@ main {
 .event__detail {
   display: flex;
   margin-bottom: 1rem;
-}
-
-.detail__label {
-  display: inline-block;
-  width: 3rem;
-  margin-right: 1rem;
-}
-
-.detail__value {
-
 }
 
 .event__additional-info {
