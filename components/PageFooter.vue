@@ -82,7 +82,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: ". copyright logo";
   width: 100%;
-  background-color: beige;
+  background-color: var(--clr-beige-light);
   align-items: center;
   box-shadow: var(--shadow-subtle);
 }
