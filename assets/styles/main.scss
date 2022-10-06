@@ -19,6 +19,7 @@ html {
   --clr-beige-light-translucent: #f1ede1cc;
 
   --shadow-subtle: 0px 0px 30px #00000026;
+  --shadow-card: 0 15px 10px #00000048;
 
   font-size: 16px;
 }
@@ -73,14 +74,66 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--clr-white);
   border-radius: 1rem;
   padding: 1rem;
+  // box-shadow: var(--shadow-card);
+  position: relative;
 
   .card__inner-wrapper {
     border-radius: .5rem;
     border: 2px dashed var(--clr-beige-medium);
+    padding: 1rem;
+  }
+
+  .card__heading {
+    font-family: var(--font-scripty);
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  &:before, &:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    box-shadow: var(--shadow-card);
+    transform: rotate(-3deg);
+  }
+
+  &:after {
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+  }
+}
+
+.card--wide {
+  .card__inner-wrapper {
     padding: 1rem 2rem;
 
     @media screen and (max-width:500px) {
       padding: 1rem;
+    }
+  }
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: -1rem;
+
+  .card {
+    flex: 1 0 0;
+    margin: 1rem;
+    min-width: 21rem;
+    max-width: 30rem;
+
+    @media screen and (max-width:500px) {
+      max-width: 100%;
     }
   }
 }

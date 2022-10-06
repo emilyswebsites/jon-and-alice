@@ -12,7 +12,7 @@
     <TopMenu hide-title></TopMenu>
     <main>
       <section class="couples-note">
-        <div class="card">
+        <div class="card card--wide">
           <div class="card__inner-wrapper">
             <p>Hello friends and family,</p>
             <br>
@@ -155,6 +155,7 @@ main {
   background-image: url(/background-pattern.svg);
   background-size: 600px;
   background-position: top right;
+  z-index: -1;
 }
 
 .couples-note {
