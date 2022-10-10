@@ -25,7 +25,7 @@
         </div>
       </section>
       <section>
-        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Schedule</span><span></span></h2>
+        <h2 class="section-heading linethrough">Schedule</h2>
         <div class="schedule__events">
           <div class="schedule__event">
             <div class="event__image framed-media">
