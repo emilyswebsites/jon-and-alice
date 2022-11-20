@@ -25,7 +25,7 @@
         </div>
       </section>
       <section>
-        <h2 class="section-heading linethrough">Schedule</h2>
+        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Schedule</span><span></span></h2>
         <div class="schedule__events">
           <div class="schedule__event">
             <div class="event__image framed-media">
@@ -151,13 +151,6 @@ export default Vue.extend({
   font-size: 2rem;
 }
 
-main {
-  background-image: url(/background-pattern.svg);
-  background-size: 600px;
-  background-position: top right;
-  z-index: -1;
-}
-
 .couples-note {
   padding: 4rem;
   width: 100%;
@@ -195,7 +188,6 @@ main {
   margin-bottom: 5rem;
   width: 50rem;
   max-width: 100%;
-  background: var(--clr-beige-light);
 }
 
 .event__image {

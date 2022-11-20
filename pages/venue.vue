@@ -2,7 +2,8 @@
   <div class="page">
     <TopMenu></TopMenu>
     <main>
-      <h2 class="section-heading linethrough">Venue</h2>
+      <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Venue</span><span></span>
+      </h2>
       <div class="venue-content">
         <div class="details">
           <div class="detail">

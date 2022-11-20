@@ -3,7 +3,7 @@
     <TopMenu></TopMenu>
     <main>
       <section class="section">
-        <h2 class="section-heading linethrough">Accommodation</h2>
+        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Accommodation</span><span></span></h2>
         <div class="section__content">
           <p class="section__description">A note about the accommodation options at the venue itself? Otherwise, here are a few nearby hotels. Integer dignissim dolor quis egestas euismod. Sed commodo nisi, mauris natoque nascetur. Ultricies tortor nam in consectetur leo. Commodo, adipiscing quam eget placerat turpis.</p>
           <div class="card-grid">
@@ -91,7 +91,7 @@
         </div>
       </section>
       <section class="section">
-        <h2 class="section-heading linethrough">Local Taxi Services</h2>
+        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Local Taxi Services</span><span></span></h2>
         <div class="section__content">
           <div class="card-grid">
             <div class="card">
@@ -161,7 +161,8 @@ main {
 }
 
 .section__description {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
 }
 
 .detail {

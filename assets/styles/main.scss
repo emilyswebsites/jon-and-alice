@@ -28,7 +28,8 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--clr-beige-dark);
-  background-color: var(--clr-beige-light);
+  background-image: linear-gradient(to top right, var(--clr-beige-light) 0%, var(--clr-beige-medium) 100%);
+  background-attachment: fixed;
   font-weight: 400;
 }
 
@@ -70,26 +71,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.section-heading.linethrough {
-  position: relative;
-  margin: 0.5rem auto;
-  width: fit-content;
-  text-align: center;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: calc(100vw - 2rem);
-    background-color: var(--clr-beige-dark);
-    height: 1px;
-    border-radius: 2px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-  }
-}
-
 .card {
   background-color: var(--clr-white);
   border-radius: 1rem;
@@ -106,6 +87,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-scripty);
     font-size: 1.5rem;
     margin: 0;
+
+    @media screen and (max-width:500px) {
+      font-size: 1.25rem;
+    }
   }
 
   &:before, &:after {
@@ -181,10 +166,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-scripty);
   font-size: 2.5rem;
   padding: 0 1rem;
-  background: var(--clr-beige-light);
 
   @media screen and (max-width:500px) {
     font-size: 2rem;
+  }
+
+  @media screen and (max-width:450px) {
+    font-size: 1.5rem;
   }
 }
 
