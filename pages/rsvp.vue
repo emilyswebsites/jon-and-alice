@@ -9,6 +9,9 @@
           </h2>
           <RsvpAcceptance v-if="currentStep === 'acceptance'" @next-clicked="showStep('names')"></RsvpAcceptance>
           <RsvpNames v-if="currentStep === 'names'"></RsvpNames>
+          <RsvpMenu v-if="currentStep === 'menu'"></RsvpMenu>
+          <RsvpDietaryRequirements v-if="currentStep === 'dietary'"></RsvpDietaryRequirements>
+          <RsvpSummary v-if="currentStep === 'summary'"></RsvpSummary>
         </div>
       </div>
     </main>
@@ -20,10 +23,15 @@
 import Vue from 'vue'
 import TopMenu from '~/components/TopMenu.vue';
 import PageFooter from '~/components/PageFooter.vue';
+import RsvpAcceptance from '~/components/RsvpAcceptance.vue';
+import RsvpNames from '~/components/RsvpNames.vue';
+import RsvpMenu from '~/components/RsvpMenu.vue';
+import RsvpDietaryRequirements from '~/components/RsvpDietaryRequirements.vue';
+import RsvpSummary from '~/components/RsvpSummary.vue';
 
 export default Vue.extend({
   name: "RsvpPage",
-  components: { TopMenu, PageFooter },
+  components: { TopMenu, PageFooter, RsvpDietaryRequirements, RsvpMenu, RsvpNames, RsvpSummary },
   data() {
     return {
       currentStep: "acceptance",
