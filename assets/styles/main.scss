@@ -162,6 +162,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.button--disabled {
+  &, &:hover {
+    background-color: var(--clr-beige-medium);
+    cursor: default;
+  }
+}
+
 .section-heading {
   font-family: var(--font-scripty);
   font-size: 2.5rem;

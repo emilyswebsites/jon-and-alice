@@ -23,7 +23,7 @@
           <NuxtLink class="link" to="travel-and-accommodation">Travel & Accommodation</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="link" to="rspv">RSPV</NuxtLink>
+          <NuxtLink class="link" to="rsvp">RSVP</NuxtLink>
         </li>
       </ul>
     </nav>
