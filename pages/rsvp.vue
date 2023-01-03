@@ -31,7 +31,7 @@ import RsvpSummary from '~/components/RsvpSummary.vue';
 
 export default Vue.extend({
   name: "RsvpPage",
-  components: { TopMenu, PageFooter, RsvpDietaryRequirements, RsvpMenu, RsvpNames, RsvpSummary },
+  components: { TopMenu, PageFooter, RsvpDietaryRequirements, RsvpAcceptance, RsvpMenu, RsvpNames, RsvpSummary },
   data() {
     return {
       currentStep: "acceptance",
