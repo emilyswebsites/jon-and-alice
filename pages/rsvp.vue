@@ -12,7 +12,8 @@
           <RsvpAcceptance v-if="currentStep === 'acceptance'" :deadline="rsvpDeadline"
             @acceptance-selected="setAcceptance($event)"></RsvpAcceptance>
           <RsvpNames v-if="currentStep === 'names'" @set-names="setNames($event)"></RsvpNames>
-          <RsvpMenu v-if="currentStep === 'menu'" :guest="answers.guests[currentGuestIndex]" @set-menu-choices="setMenuChoices($event)">
+          <RsvpMenu v-if="currentStep === 'menu'" :guest="answers.guests[currentGuestIndex]"
+            :is-last-guest="currentGuestIndex === answers.guests.length - 1" @set-menu-choices="setMenuChoices($event)">
           </RsvpMenu>
           <RsvpDietaryRequirements v-if="currentStep === 'dietary'"></RsvpDietaryRequirements>
           <RsvpSummary v-if="currentStep === 'summary'"></RsvpSummary>
