@@ -1,6 +1,6 @@
 <template>
   <form class="rsvp__section" @submit.prevent="submit()">
-    <p class="subtitle">Please let us know what you would like to eat and if you have any dietary requirements.</p>
+    <p class="subtitle">Please let us know what you would like to eat. If you have any dietary requirements, these can be detailed on the next page.</p>
     <h3 class="guest-name linethrough"><span></span><span class="linethrough__content">{{ guest.name }}</span><span></span>
     </h3>
     <div class="menu">
@@ -173,6 +173,22 @@ export default {
 .menu {
   max-height: 15rem;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-green-medium) var(--clr-beige-light);
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--clr-beige-light);
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-green-medium);
+    border-radius: 20px;
+  }
 }
 
 .button {
