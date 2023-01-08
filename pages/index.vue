@@ -172,7 +172,6 @@ export default Vue.extend({
 }
 
 .button {
-  font-size: 1.25rem;
   margin: 2rem auto 0;
 }
 

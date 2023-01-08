@@ -1,7 +1,7 @@
 <template>
   <div class="rsvp__section">
-    <p class="subtitle">Please reply before Xth Month 2023</p>
-    <form class="rsvp__form" @submit.prevent="$emit('next-clicked')">
+    <p class="subtitle">Please reply before {{ deadline }}.</p>
+    <form class="rsvp__form" @submit.prevent="submit()">
       <div class="form-field">
         <label for="names">
           Name(s):
@@ -22,8 +22,8 @@
           </label>
         </div>
       </div>
-      <button class="button button--rsvp" :class="{ 'button--disabled': !names || accept === null }"
-        type="submit" :disabled="!names || accept === null">Continue</button>
+      <button class="button button--rsvp" :class="{ 'button--disabled': !names || accept === null }" type="submit"
+        :disabled="!names || accept === null">Continue</button>
     </form>
   </div>
 </template>
@@ -31,6 +31,12 @@
 <script>
 export default {
   name: 'RsvpAcceptance',
+  props: {
+    deadline: {
+      type: String,
+      required: true,
+    }
+  },
   data() {
     return {
       names: '',
@@ -38,6 +44,9 @@ export default {
     }
   },
   methods: {
+    submit() {
+      this.$emit('next-clicked');
+    }
   }
 }
 </script>

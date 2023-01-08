@@ -7,7 +7,8 @@
           <h2 class="section-heading linethrough"><span></span><span
               class="linethrough__content">RSVP</span><span></span>
           </h2>
-          <RsvpAcceptance v-if="currentStep === 'acceptance'" @next-clicked="showStep('names')"></RsvpAcceptance>
+          <RsvpInvitationType v-if="currentStep === 'invitation'" @invitation-selected="setInvitationType($event)"></RsvpInvitationType>
+          <RsvpAcceptance v-if="currentStep === 'acceptance'" :deadline="rsvpDeadline" @next-clicked="showStep('names')"></RsvpAcceptance>
           <RsvpNames v-if="currentStep === 'names'"></RsvpNames>
           <RsvpMenu v-if="currentStep === 'menu'"></RsvpMenu>
           <RsvpDietaryRequirements v-if="currentStep === 'dietary'"></RsvpDietaryRequirements>
@@ -23,6 +24,7 @@
 import Vue from 'vue'
 import TopMenu from '~/components/TopMenu.vue';
 import PageFooter from '~/components/PageFooter.vue';
+import RsvpInvitationType from '~/components/RsvpInvitationType.vue';
 import RsvpAcceptance from '~/components/RsvpAcceptance.vue';
 import RsvpNames from '~/components/RsvpNames.vue';
 import RsvpMenu from '~/components/RsvpMenu.vue';
@@ -34,12 +36,36 @@ export default Vue.extend({
   components: { TopMenu, PageFooter, RsvpDietaryRequirements, RsvpAcceptance, RsvpMenu, RsvpNames, RsvpSummary },
   data() {
     return {
-      currentStep: "acceptance",
+      currentStep: "invitation",
+      answers: {
+        invitationType: '',
+        names: '',
+        acceptance: '',
+        guests: [{
+          name: '',
+          menuChoices: {
+            menuType: '',
+            starter: '',
+            mainCourse: '',
+            dessert: '',
+          }
+        }],
+        dietaryRequirements: '',
+      }
+    }
+  },
+  computed: {
+    rsvpDeadline() {
+      return this.answers.invitationType === 'evening' ? '13th April 2023' : '31st March 2023';
     }
   },
   methods: {
     showStep(stepName: string) {
       this.currentStep = stepName;
+    },
+    setInvitationType(event: string) {
+      this.answers.invitationType = event;
+      this.showStep('acceptance');
     }
   }
 })
@@ -82,7 +108,6 @@ main {
 }
 
 .button--rsvp {
-  font-size: 1.25rem;
   margin: 4rem auto 0;
 }
 
