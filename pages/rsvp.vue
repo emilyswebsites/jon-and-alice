@@ -7,9 +7,11 @@
           <h2 class="section-heading linethrough"><span></span><span
               class="linethrough__content">RSVP</span><span></span>
           </h2>
-          <RsvpInvitationType v-if="currentStep === 'invitation'" @invitation-selected="setInvitationType($event)"></RsvpInvitationType>
-          <RsvpAcceptance v-if="currentStep === 'acceptance'" :deadline="rsvpDeadline" @next-clicked="showStep('names')"></RsvpAcceptance>
-          <RsvpNames v-if="currentStep === 'names'"></RsvpNames>
+          <RsvpInvitationType v-if="currentStep === 'invitation'" @invitation-selected="setInvitationType($event)">
+          </RsvpInvitationType>
+          <RsvpAcceptance v-if="currentStep === 'acceptance'" :deadline="rsvpDeadline"
+            @acceptance-selected="setAcceptance($event)"></RsvpAcceptance>
+          <RsvpNames v-if="currentStep === 'names'" @set-names="setNames($event)"></RsvpNames>
           <RsvpMenu v-if="currentStep === 'menu'"></RsvpMenu>
           <RsvpDietaryRequirements v-if="currentStep === 'dietary'"></RsvpDietaryRequirements>
           <RsvpSummary v-if="currentStep === 'summary'"></RsvpSummary>
@@ -40,7 +42,7 @@ export default Vue.extend({
       answers: {
         invitationType: '',
         names: '',
-        acceptance: '',
+        acceptance: undefined as unknown as boolean,
         guests: [{
           name: '',
           menuChoices: {
@@ -66,6 +68,25 @@ export default Vue.extend({
     setInvitationType(event: string) {
       this.answers.invitationType = event;
       this.showStep('acceptance');
+    },
+    setAcceptance(event: { acceptance: boolean, names: string }) {
+      this.answers.acceptance = event.acceptance;
+      this.answers.names = event.names;
+      this.showStep('names');
+    },
+    setNames(event: string[]) {
+      this.answers.guests = event.map(name => {
+        return {
+          name,
+          menuChoices: {
+            menuType: '',
+            starter: '',
+            mainCourse: '',
+            dessert: '',
+          }
+        }
+      });
+      this.showStep('menu');
     }
   }
 })
@@ -127,8 +148,8 @@ main {
     font-size: 1.25rem;
   }
 
-  input[type=text] {
-    flex-grow: 1;
+  input[type=text],
+  input[type=number] {
     border: 0;
     border-bottom: 1px solid var(--clr-beige-medium);
     padding: 0.25rem 0.25rem 0;
@@ -141,6 +162,14 @@ main {
     &:focus {
       border-color: var(--clr-beige-dark);
     }
+  }
+
+  input[type=text] {
+    flex-grow: 1;
+  }
+
+  input[type=number] {
+    width: 3rem;
   }
 }
 </style>

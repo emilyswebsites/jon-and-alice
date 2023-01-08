@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     submit() {
-      this.$emit('next-clicked');
+      this.$emit('acceptance-selected', { acceptance: this.accept, names: this.names });
     }
   }
 }
