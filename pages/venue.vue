@@ -22,9 +22,7 @@
             </div>
           </div>
           <p class="detail">
-            Integer dignissim dolor quis egestas euismod. Sed commodo nisi, mauris natoque nascetur. Ultricies tortor
-            nam
-            in consectetur leo. Commodo, adipiscing quam eget placerat turpis.
+            There is plenty of parking on site, and Tetbury is a 5-10 minute walk from the venue, via a footpath.
           </p>
         </div>
         <div class="map__container framed-media">

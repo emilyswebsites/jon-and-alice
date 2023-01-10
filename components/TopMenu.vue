@@ -20,7 +20,7 @@
           <NuxtLink class="link" to="venue">Venue</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="link" to="travel-and-accommodation">Travel & Accommodation</NuxtLink>
+          <NuxtLink class="link" to="other-info">Other Info</NuxtLink>
         </li>
         <li>
           <NuxtLink class="link" to="rsvp">RSVP</NuxtLink>
@@ -60,8 +60,8 @@ header {
 
 .header__title {
   font-family: var(--font-scripty);
-  font-size: 2.5rem;
-  padding: 1.5rem 2rem 0.5rem;
+  font-size: 2rem;
+  padding: 1rem 1rem 0;
   margin: 0;
   text-align: center;
 }

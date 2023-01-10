@@ -14,11 +14,11 @@
       <section class="couples-note">
         <div class="card card--wide">
           <div class="card__inner-wrapper">
-            <p>Hello friends and family,</p>
+            <p>Hello family and friends,</p>
             <br>
-            <p>We would love you to come and celebrate our wedding with us. Please RSVP before Xth Month YYYY.</p>
+            <p>We would love you to come and celebrate our wedding with us. Please RSVP before 31st March 2023.</p>
             <br>
-            <p>See you soon!</p>
+            <p>Hope to see you soon!</p>
             <p>Alice & Jon</p>
             <NuxtLink to="rsvp" class="button">RSVP</NuxtLink>
           </div>
@@ -35,14 +35,14 @@
               <h3 class="event__heading">The Ceremony</h3>
               <div class="detail">
                 <span class="detail__label">When:</span>
-                <span class="detail__value">XX:00</span>
+                <span class="detail__value">12:00</span>
               </div>
               <div class="detail">
                 <span class="detail__label">Where:</span>
-                <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
+                <span class="detail__value">The Great Tythe Barn, Tetbury</span>
               </div>
               <p class="detail event__additional-info">
-                Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
+                Please arrive by 11:30 so you can be seated before the ceremony starts at 12:00.
               </p>
             </div>
           </div>
@@ -54,15 +54,12 @@
               <h3 class="event__heading">The Reception</h3>
               <div class="detail">
                 <span class="detail__label">When:</span>
-                <span class="detail__value">XX:00</span>
+                <span class="detail__value">Following the ceremony</span>
               </div>
               <div class="detail">
                 <span class="detail__label">Where:</span>
-                <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
+                <span class="detail__value">The Great Tythe Barn, Tetbury</span>
               </div>
-              <p class="detail event__additional-info">
-                Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
-              </p>
             </div>
           </div>
           <div class="schedule__event">
@@ -73,14 +70,14 @@
               <h3 class="event__heading">The Evening Party</h3>
               <div class="detail">
                 <span class="detail__label">When:</span>
-                <span class="detail__value">XX:00</span>
+                <span class="detail__value">18:30</span>
               </div>
               <div class="detail">
                 <span class="detail__label">Where:</span>
-                <span class="detail__value">A Part of Venue at The Great Tythe Barn, Tetbury</span>
+                <span class="detail__value">The Great Tythe Barn, Tetbury</span>
               </div>
               <p class="detail event__additional-info">
-                Any additional comments, such as please arrive early or make sure you’re wearing dungarees.
+                Carriages at midnight.
               </p>
             </div>
           </div>
@@ -185,7 +182,7 @@ export default Vue.extend({
   align-items: center;
   margin: auto;
   margin-bottom: 5rem;
-  width: 50rem;
+  width: 36rem;
   max-width: 100%;
 }
 
