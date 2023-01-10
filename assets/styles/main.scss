@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Petit+Formal+Script&family=Petrona&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Petit+Formal+Script&family=Petrona&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 html {
   --font-scripty: 'Petit Formal Script', cursive;
   --font-body: 'Petrona', serif;
-  --font-heading: 'DM Serif Display', serif;
+  --font-heading: 'DM Serif Text', serif;
 
   --clr-white: #fff;
   --clr-green-medium: #008037;
