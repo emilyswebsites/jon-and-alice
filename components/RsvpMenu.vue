@@ -22,11 +22,11 @@
       <div v-if="menuType" class="form-field form-field--radio">
         <label class="radio__label">Starter:</label>
         <div class="option">
-          <input id="ham-hock" v-model="starter" value="ham-hock" type="radio" name="starter" />
+          <input id="ham-hock" v-model="starter" value="ham hock and leek terrine" type="radio" name="starter" />
           <label for="ham-hock">Ham hock and leek terrine, served with toasted brioche</label>
         </div>
         <div class="option">
-          <input id="arancini" v-model="starter" value="arancini" type="radio" name="starter" />
+          <input id="arancini" v-model="starter" value="three cheese arancini" type="radio" name="starter" />
           <label for="arancini">Three cheese arancini (V, VeO)</label>
         </div>
         <div class="option">
@@ -35,7 +35,7 @@
             with mozzarella (V, VeO)</label>
         </div>
         <div v-if="menuType === 'child'" class="option">
-          <input id="garlic-bread" v-model="starter" value="garlic-bread" type="radio" name="starter" />
+          <input id="garlic-bread" v-model="starter" value="garlic bread" type="radio" name="starter" />
           <label for="garlic-bread">Garlic bread</label>
         </div>
         <div class="option">
@@ -46,21 +46,21 @@
       <div v-if="menuType" class="form-field form-field--radio">
         <label class="radio__label">Main:</label>
         <div class="option">
-          <input id="beef" v-model="main" value="beef" type="radio" name="main" />
+          <input id="beef" v-model="main" value="roast sirloin of beef" type="radio" name="main" />
           <label for="beef">Traditional roast sirloin of beef with homemade Yorkshire pudding, roast potatoes and pan
             gravy (GF)</label>
         </div>
         <div class="option">
-          <input id="chicken" v-model="main" value="chicken" type="radio" name="main" />
+          <input id="chicken" v-model="main" value="chicken in white wine sauce" type="radio" name="main" />
           <label for="chicken">Breast of chicken served in a white wine sauce with asparagus on a bed of crushed new
             potatoes (GF)</label>
         </div>
         <div class="option">
-          <input id="peppers" v-model="main" value="peppers" type="radio" name="main" />
+          <input id="peppers" v-model="main" value="stuffed peppers" type="radio" name="main" />
           <label for="peppers">Peppers stuffed with vegetable risotto topped with parmesan shavings (GF, V, VeO)</label>
         </div>
         <div v-if="menuType === 'child'" class="option">
-          <input id="nuggets" v-model="main" value="nuggets" type="radio" name="main" />
+          <input id="nuggets" v-model="main" value="chicken nuggets" type="radio" name="main" />
           <label for="nuggets">Chicken nuggets, chips and beans</label>
         </div>
         <div class="option">
@@ -71,15 +71,15 @@
       <div v-if="menuType" class="form-field form-field--radio">
         <label class="radio__label">Dessert:</label>
         <div class="option">
-          <input id="toffee" v-model="dessert" value="toffee" type="radio" name="dessert" />
+          <input id="toffee" v-model="dessert" value="sticky toffee pudding" type="radio" name="dessert" />
           <label for="toffee">Hot sticky toffee pudding with toffee sauce</label>
         </div>
         <div class="option">
-          <input id="tart" v-model="dessert" value="tart" type="radio" name="dessert" />
+          <input id="tart" v-model="dessert" value="lemon tart" type="radio" name="dessert" />
           <label for="tart">Tangy lemon tart with mango coulis</label>
         </div>
         <div v-if="menuType === 'child'" class="option">
-          <input id="ice-cream" v-model="dessert" value="ice-cream" type="radio" name="dessert" />
+          <input id="ice-cream" v-model="dessert" value="vanilla ice cream" type="radio" name="dessert" />
           <label for="ice-cream">Vanilla ice cream</label>
         </div>
         <div class="option">

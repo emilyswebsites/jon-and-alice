@@ -16,7 +16,7 @@
             :is-last-guest="currentGuestIndex === answers.guests.length - 1" @set-menu-choices="setMenuChoices($event)">
           </RsvpMenu>
           <RsvpDietaryRequirements v-if="currentStep === 'dietary'" @set-dietary-requirements="setDietaryRequirements($event)"></RsvpDietaryRequirements>
-          <RsvpSummary v-if="currentStep === 'summary'"></RsvpSummary>
+          <RsvpSummary v-if="currentStep === 'summary'" :answers="answers" @submit-rsvp="submitRsvp()"></RsvpSummary>
         </div>
       </div>
     </main>
@@ -107,6 +107,14 @@ export default Vue.extend({
       this.answers.dietaryRequirements = event;
       this.showStep('summary');
     },
+    submitRsvp() {
+      console.log("Submitting!");
+      // TODO
+      // Send an email
+      // UI for 'sending in progress'
+      // this.showStep('complete')
+      // this.showStep('error')
+    }
   }
 })
 </script>
