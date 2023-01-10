@@ -15,7 +15,7 @@
           <RsvpMenu v-if="currentStep === 'menu'" :guest="answers.guests[currentGuestIndex]"
             :is-last-guest="currentGuestIndex === answers.guests.length - 1" @set-menu-choices="setMenuChoices($event)">
           </RsvpMenu>
-          <RsvpDietaryRequirements v-if="currentStep === 'dietary'"></RsvpDietaryRequirements>
+          <RsvpDietaryRequirements v-if="currentStep === 'dietary'" @set-dietary-requirements="setDietaryRequirements($event)"></RsvpDietaryRequirements>
           <RsvpSummary v-if="currentStep === 'summary'"></RsvpSummary>
         </div>
       </div>
@@ -102,7 +102,11 @@ export default Vue.extend({
       } else {
         this.currentGuestIndex++;
       }
-    }
+    },
+    setDietaryRequirements(event: string) {
+      this.answers.dietaryRequirements = event;
+      this.showStep('summary');
+    },
   }
 })
 </script>

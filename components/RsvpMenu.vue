@@ -89,7 +89,7 @@
       </div>
     </div>
     <button :class="{ 'button--disabled': !formValid }" type="submit" :disabled="!formValid"
-      class="button">Next{{ isLastGuest ? '' : ' Guest' }}</button>
+      class="button">{{ isLastGuest ? 'Continue' : 'Next Guest' }}</button>
   </form>
 </template>
 
