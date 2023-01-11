@@ -10,13 +10,13 @@
       </div>
       <div class="form-field">
         <div class="option">
-          <input id="accept" v-model="accept" value="true" type="radio" name="accept" />
+          <input id="accept" v-model="accept" :value="true" type="radio" name="accept" />
           <label for="accept">
             Accept <span>with pleasure</span>
           </label>
         </div>
         <div class="option">
-          <input id="decline" v-model="accept" value="false" type="radio" name="accept" />
+          <input id="decline" v-model="accept" :value="false" type="radio" name="accept" />
           <label for="decline">
             Decline <span>with regret</span>
           </label>

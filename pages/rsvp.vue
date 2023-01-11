@@ -17,6 +17,8 @@
           </RsvpMenu>
           <RsvpDietaryRequirements v-if="currentStep === 'dietary'" @set-dietary-requirements="setDietaryRequirements($event)"></RsvpDietaryRequirements>
           <RsvpSummary v-if="currentStep === 'summary'" :answers="answers" @submit-rsvp="submitRsvp()"></RsvpSummary>
+          <RsvpComplete v-if="currentStep === 'complete'" :accepted="answers.acceptance"></RsvpComplete>
+          <RsvpError v-if="currentStep === 'error'" :answers="answers"></RsvpError>
         </div>
       </div>
     </main>
@@ -34,10 +36,12 @@ import RsvpNames from '~/components/RsvpNames.vue';
 import RsvpMenu from '~/components/RsvpMenu.vue';
 import RsvpDietaryRequirements from '~/components/RsvpDietaryRequirements.vue';
 import RsvpSummary from '~/components/RsvpSummary.vue';
+import RsvpComplete from '~/components/RsvpComplete.vue';
+import RsvpError from '~/components/RsvpError.vue';
 
 export default Vue.extend({
   name: "RsvpPage",
-  components: { TopMenu, PageFooter, RsvpDietaryRequirements, RsvpAcceptance, RsvpMenu, RsvpNames, RsvpSummary },
+  components: { TopMenu, PageFooter, RsvpDietaryRequirements, RsvpAcceptance, RsvpMenu, RsvpNames, RsvpSummary, RsvpComplete, RsvpError },
   data() {
     return {
       currentStep: "invitation",
@@ -112,7 +116,7 @@ export default Vue.extend({
       // TODO
       // Send an email
       // UI for 'sending in progress'
-      // this.showStep('complete')
+      this.showStep('complete')
       // this.showStep('error')
     }
   }
