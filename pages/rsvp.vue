@@ -4,11 +4,8 @@
     <main>
       <div class="card">
         <div class="card__inner-wrapper">
-          <h2 class="section-heading linethrough"><span></span><span
-              class="linethrough__content">RSVP</span><span></span>
-          </h2>
-          <RsvpInvitationType v-if="currentStep === 'invitation'" @invitation-selected="setInvitationType($event)">
-          </RsvpInvitationType>
+          <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">RSVP</span><span></span></h2>
+          <RsvpInvitationType v-if="currentStep === 'invitation'" @invitation-selected="setInvitationType($event)"></RsvpInvitationType>
           <RsvpAcceptance v-if="currentStep === 'acceptance'" :deadline="rsvpDeadline"
             @acceptance-selected="setAcceptance($event)"></RsvpAcceptance>
           <RsvpNames v-if="currentStep === 'names'" @set-names="setNames($event)"></RsvpNames>
@@ -50,22 +47,14 @@ export default Vue.extend({
         invitationType: '',
         names: '',
         acceptance: undefined as unknown as boolean,
-        guests: [{
-          name: '',
-          menuChoices: {
-            menuType: '',
-            starter: '',
-            main: '',
-            dessert: '',
-          }
-        }],
+        guests: [] as any[],
         dietaryRequirements: '',
       }
     }
   },
   computed: {
     rsvpDeadline() {
-      return this.answers.invitationType === 'evening' ? '13th April 2023' : '31st March 2023';
+      return (this as any).answers.invitationType === 'evening' ? '13th April 2023' : '31st March 2023';
     }
   },
   methods: {
@@ -79,7 +68,15 @@ export default Vue.extend({
     setAcceptance(event: { acceptance: boolean, names: string }) {
       this.answers.acceptance = event.acceptance;
       this.answers.names = event.names;
-      this.showStep('names');
+      if (event.acceptance) {
+        if (this.answers.invitationType === 'day') {
+          this.showStep('names');
+        } else {
+          this.showStep('dietary');
+        }
+      } else {
+        this.submitRsvp();
+      }
     },
     setNames(event: string[]) {
       this.answers.guests = event.map(name => {
