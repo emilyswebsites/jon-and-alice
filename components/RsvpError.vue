@@ -91,6 +91,7 @@ p {
   font: inherit;
   color: inherit;
   position: relative;
+  cursor: pointer;
 }
 
 .copied::after {

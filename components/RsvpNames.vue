@@ -1,7 +1,7 @@
 <template>
   <div class="rsvp__section">
     <form class="rsvp__form" @submit.prevent="submit()">
-      <div class="form-field">
+      <div v-if="!(oldNames && oldNames.length)" class="form-field">
         <label for="names">
           Number of guests attending:
         </label>
@@ -24,6 +24,12 @@
 <script>
 export default {
   name: 'RsvpNames',
+  props: {
+    oldNames: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       guestCount: undefined,
@@ -32,13 +38,21 @@ export default {
   },
   computed: {
     formValid() {
-      return +this.guestCount
+      if (!this.oldNames) {
+        return +this.guestCount
         && !isNaN(+this.guestCount)
         && +this.guestCount > 0
         && this.guestNames.length === +this.guestCount
         && !this.guestNames.includes(undefined)
         && this.guestNames.filter(x => !x).length === 0;
+      } else {
+        return !this.guestNames.includes(undefined)
+          && this.guestNames.filter(x => !x).length === 0;
+      }
     }
+  },
+  created() {
+    this.guestNames = this.oldNames?.map(g => g.name);
   },
   methods: {
     updateNumberOfGuests() {

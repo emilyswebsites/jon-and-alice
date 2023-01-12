@@ -11,10 +11,19 @@
 <script>
 export default {
   name: 'RsvpDietaryRequirements',
+  props: {
+    oldDietaryRequirements: {
+      type: String,
+      default: '',
+    }
+  },
   data() {
     return {
       dietaryRequirements: '',
     }
+  },
+  created() {
+    this.dietaryRequirements = this.oldDietaryRequirements;
   },
   methods: {
     submit() {

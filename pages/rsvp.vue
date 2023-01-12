@@ -4,16 +4,22 @@
     <main>
       <div class="card">
         <div class="card__inner-wrapper">
-          <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">RSVP</span><span></span></h2>
-          <RsvpInvitationType v-if="currentStep === 'invitation'" @invitation-selected="setInvitationType($event)"></RsvpInvitationType>
-          <RsvpAcceptance v-if="currentStep === 'acceptance'" :deadline="rsvpDeadline"
-            @acceptance-selected="setAcceptance($event)"></RsvpAcceptance>
-          <RsvpNames v-if="currentStep === 'names'" @set-names="setNames($event)"></RsvpNames>
+          <h2 class="section-heading linethrough"><span></span><span
+              class="linethrough__content">RSVP</span><span></span></h2>
+          <RsvpInvitationType v-if="currentStep === 'invitation'" @invitation-selected="setInvitationType($event)">
+          </RsvpInvitationType>
+          <RsvpAcceptance v-if="currentStep === 'acceptance'" :deadline="rsvpDeadline" :old-accept="answers.acceptance"
+            :old-names="answers.names" @acceptance-selected="setAcceptance($event)"></RsvpAcceptance>
+          <RsvpNames v-if="currentStep === 'names'" :old-names="answers.guests" @set-names="setNames($event)">
+          </RsvpNames>
           <RsvpMenu v-if="currentStep === 'menu'" :guest="answers.guests[currentGuestIndex]"
             :is-last-guest="currentGuestIndex === answers.guests.length - 1" @set-menu-choices="setMenuChoices($event)">
           </RsvpMenu>
-          <RsvpDietaryRequirements v-if="currentStep === 'dietary'" @set-dietary-requirements="setDietaryRequirements($event)"></RsvpDietaryRequirements>
-          <RsvpSummary v-if="currentStep === 'summary'" :answers="answers" @submit-rsvp="submitRsvp()"></RsvpSummary>
+          <RsvpDietaryRequirements v-if="currentStep === 'dietary'"
+            :old-dietary-requirements="answers.dietaryRequirements"
+            @set-dietary-requirements="setDietaryRequirements($event)"></RsvpDietaryRequirements>
+          <RsvpSummary v-if="currentStep === 'summary'" :answers="answers" @edit-step="editStep($event)"
+            @edit-menu-step="editMenuStep($event)" @submit-rsvp="submitRsvp()"></RsvpSummary>
           <RsvpComplete v-if="currentStep === 'complete'" :accepted="answers.acceptance"></RsvpComplete>
           <RsvpError v-if="currentStep === 'error'" :answers="answers"></RsvpError>
         </div>
@@ -38,11 +44,23 @@ import RsvpError from '~/components/RsvpError.vue';
 
 export default Vue.extend({
   name: "RsvpPage",
-  components: { TopMenu, PageFooter, RsvpDietaryRequirements, RsvpAcceptance, RsvpMenu, RsvpNames, RsvpSummary, RsvpComplete, RsvpError },
+  components: {
+    TopMenu,
+    PageFooter,
+    RsvpDietaryRequirements,
+    RsvpAcceptance,
+    RsvpMenu,
+    RsvpNames,
+    RsvpSummary,
+    RsvpComplete,
+    RsvpError,
+    RsvpInvitationType
+  },
   data() {
     return {
       currentStep: "invitation",
       currentGuestIndex: 0,
+      hasReachedSummary: false,
       answers: {
         invitationType: '',
         names: '',
@@ -71,6 +89,8 @@ export default Vue.extend({
       if (event.acceptance) {
         if (this.answers.invitationType === 'day') {
           this.showStep('names');
+        } else if (this.hasReachedSummary) {
+          this.showStep('summary');
         } else {
           this.showStep('dietary');
         }
@@ -79,18 +99,25 @@ export default Vue.extend({
       }
     },
     setNames(event: string[]) {
-      this.answers.guests = event.map(name => {
-        return {
-          name,
-          menuChoices: {
-            menuType: '',
-            starter: '',
-            main: '',
-            dessert: '',
+      if (this.hasReachedSummary) {
+        event.forEach((name, index) => {
+          this.answers.guests[index].name = name;
+        });
+        this.showStep('summary');
+      } else {
+        this.answers.guests = event.map(name => {
+          return {
+            name,
+            menuChoices: {
+              menuType: '',
+              starter: '',
+              main: '',
+              dessert: '',
+            }
           }
-        }
-      });
-      this.showStep('menu');
+        });
+        this.showStep('menu');
+      }
     },
     setMenuChoices(event: { menuType: string, starter: string, main: string, dessert: string }) {
       this.answers.guests[this.currentGuestIndex].menuChoices.menuType = event.menuType;
@@ -98,7 +125,9 @@ export default Vue.extend({
       this.answers.guests[this.currentGuestIndex].menuChoices.main = event.main;
       this.answers.guests[this.currentGuestIndex].menuChoices.dessert = event.dessert;
 
-      if (this.currentGuestIndex >= this.answers.guests.length - 1) {
+      if (this.hasReachedSummary) {
+        this.showStep('summary');
+      } else if (this.currentGuestIndex >= this.answers.guests.length - 1) {
         this.showStep('dietary');
       } else {
         this.currentGuestIndex++;
@@ -106,15 +135,23 @@ export default Vue.extend({
     },
     setDietaryRequirements(event: string) {
       this.answers.dietaryRequirements = event;
+      this.hasReachedSummary = true;
       this.showStep('summary');
+    },
+    editStep(stepName: string) {
+      this.showStep(stepName);
+    },
+    editMenuStep(guestIndex: number) {
+      this.currentGuestIndex = guestIndex;
+      this.editStep('menu');
     },
     submitRsvp() {
       console.log("Submitting!");
       // TODO
       // Send an email
       // UI for 'sending in progress'
-      this.showStep('complete')
-      // this.showStep('error')
+      // this.showStep('complete')
+      this.showStep('error')
     }
   }
 })

@@ -32,6 +32,14 @@
 export default {
   name: 'RsvpAcceptance',
   props: {
+    oldAccept: {
+      type: Boolean,
+      default: null,
+    },
+    oldNames: {
+      type: String,
+      default: '',
+    },
     deadline: {
       type: String,
       required: true,
@@ -42,6 +50,10 @@ export default {
       names: '',
       accept: null,
     }
+  },
+  created() {
+    this.accept = this.oldAccept;
+    this.names = this.oldNames;
   },
   methods: {
     submit() {

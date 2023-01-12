@@ -126,14 +126,20 @@ export default {
     guest: {
       immediate: false,
       handler (val, _oldVal) {
-        this.menuType = val.menuChoices.menuType ?? '';
-        this.starter = val.menuChoices.starter ?? '';
-        this.main = val.menuChoices.main ?? '';
-        this.dessert = val.menuChoices.dessert ?? '';
+        this.populateChoices(val);
       }
     }
   },
+  created() {
+    this.populateChoices(this.guest);
+  },
   methods: {
+    populateChoices(guest) {
+      this.menuType = guest.menuChoices.menuType ?? '';
+      this.starter = guest.menuChoices.starter ?? '';
+      this.main = guest.menuChoices.main ?? '';
+      this.dessert = guest.menuChoices.dessert ?? '';
+    },
     submit() {
       if (!this.formValid) {
         return;
