@@ -81,14 +81,14 @@
               <h3 class="event__heading">The Evening Party</h3>
               <div class="detail">
                 <span class="detail__label">When:</span>
-                <span class="detail__value">18:30</span>
+                <span class="detail__value">Evening guests arrival between 18:30 & 19:00</span>
               </div>
               <div class="detail">
                 <span class="detail__label">Where:</span>
                 <span class="detail__value">The Great Tythe Barn, Tetbury</span>
               </div>
               <p class="detail event__additional-info">
-                Evening guests arrival between 18:30 & 19:00. Carriages at midnight.
+                Carriages at midnight.
               </p>
             </div>
           </div>
