@@ -129,25 +129,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.card-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0 -1rem -1rem -1rem;
-
-  .card {
-    flex: 1 0 0;
-    margin: 1rem;
-    min-width: 21rem;
-    max-width: 30rem;
-
-    @media screen and (max-width:500px) {
-      max-width: 100%;
-      min-width: 60%;
-    }
-  }
-}
-
 .button {
   display: block;
   width: 8em;

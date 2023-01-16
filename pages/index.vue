@@ -3,13 +3,18 @@
     <div class="hero">
       <h1 class="hero__banner">
         <div class="hero__banner-content">
-          <span class="hero__date linethrough"><span></span><span class="linethrough__content">13th May 2023</span><span></span></span>
+          <span class="hero__date linethrough"><span></span><span class="linethrough__content">13th May
+              2023</span><span></span></span>
           <span class="hero__title">Alice & Jon</span>
-          <span class="hero__subtitle linethrough"><span></span><span class="linethrough__content">are getting married</span><span></span></span>
+          <span class="hero__subtitle linethrough"><span></span><span class="linethrough__content">are getting
+              married</span><span></span></span>
         </div>
       </h1>
+      <button class="scroll-button" @click="scrollPastHero()">
+        <img src="down-arrow-circle.svg" alt="Scroll to schedule">
+      </button>
     </div>
-    <TopMenu hide-title></TopMenu>
+    <TopMenu ref="menu" hide-title></TopMenu>
     <main>
       <section class="couples-note">
         <div class="card card--wide">
@@ -25,7 +30,8 @@
         </div>
       </section>
       <section>
-        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Schedule</span><span></span></h2>
+        <h2 class="section-heading linethrough"><span></span><span
+            class="linethrough__content">Schedule</span><span></span></h2>
         <div class="schedule__events">
           <div class="schedule__event">
             <div class="event__image framed-media">
@@ -42,7 +48,8 @@
                 <span class="detail__value">The Great Tythe Barn, Tetbury</span>
               </div>
               <p class="detail event__additional-info">
-                Please arrive by 11:30 so you can be seated before the ceremony starts at 12:00.
+                Please arrive by 11:30 so you can be seated before the ceremony starts at 12:00. Summer formal dress
+                code.
               </p>
             </div>
           </div>
@@ -60,6 +67,9 @@
                 <span class="detail__label">Where:</span>
                 <span class="detail__value">The Great Tythe Barn, Tetbury</span>
               </div>
+              <p class="detail event__additional-info">
+                Canapes, drinks and photos before the wedding breakfast.
+              </p>
             </div>
           </div>
           <div class="schedule__event">
@@ -77,7 +87,7 @@
                 <span class="detail__value">The Great Tythe Barn, Tetbury</span>
               </div>
               <p class="detail event__additional-info">
-                Carriages at midnight.
+                Evening guests arrival between 18:30 & 19:00. Carriages at midnight.
               </p>
             </div>
           </div>
@@ -94,8 +104,13 @@ import TopMenu from '~/components/TopMenu.vue';
 import PageFooter from '~/components/PageFooter.vue';
 
 export default Vue.extend({
-    name: "IndexPage",
-    components: { TopMenu, PageFooter }
+  name: "IndexPage",
+  components: { TopMenu, PageFooter },
+  methods: {
+    scrollPastHero() {
+      (this.$refs.menu as any).$el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 })
 </script>
 
@@ -111,6 +126,7 @@ export default Vue.extend({
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
+  position: relative;
 }
 
 .hero__banner {
@@ -146,6 +162,22 @@ export default Vue.extend({
 .hero__subtitle {
   font-family: var(--font-heading);
   font-size: 2rem;
+}
+
+.scroll-button {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  background: none;
+  border: none;
+  filter: var(--shadow-subtle);
+  cursor: pointer;
+
+  img {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
 .couples-note {

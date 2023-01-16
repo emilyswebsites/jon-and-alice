@@ -3,94 +3,46 @@
     <TopMenu></TopMenu>
     <main>
       <section class="section">
-        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Accommodation</span><span></span></h2>
+        <h2 class="section-heading linethrough"><span></span><span
+            class="linethrough__content">Accommodation</span><span></span></h2>
         <div class="section__content">
-          <p class="section__description">There are various accommodation options on site, including self-catered cottages and B&Bs. Please note there are weddings on the days either side, and accommodation is not reserved.</p>
-          <div class="card-grid">
-            <div class="card">
-              <div class="card__inner-wrapper">
-                <h3 class="card__heading">A Nice Hotel</h3>
-                <div class="detail">
-                  <div class="detail__label">Website:</div>
-                  <div class="detail__value">
-                    <a target="_blank" href="https://example.com">a-nice-hotel.example.com</a>
-                  </div>
-                </div>
-                <div class="detail">
-                  <div class="detail__label">Address:</div>
-                  <address class="detail__value">
-                    A Nice Hotel, Road Name<br />
-                    Tetbury<br />
-                    P05T C0D3
-                  </address>
-                </div>
-                <div class="card__description">Any additional comments, such as how far it is from the venue.</div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__inner-wrapper">
-                <h3 class="card__heading">Another Hotel</h3>
-                <div class="detail">
-                  <div class="detail__label">Website:</div>
-                  <div class="detail__value">
-                    <a target="_blank" href="https://example.com">a-nice-hotel.example.com</a>
-                  </div>
-                </div>
-                <div class="detail">
-                  <div class="detail__label">Address:</div>
-                  <address class="detail__value">
-                    A Nice Hotel, Road Name<br />
-                    Tetbury<br />
-                    P05T C0D3
-                  </address>
-                </div>
-                <div class="card__description">Any additional comments, such as how far it is from the venue.</div>
-              </div>
-            </div>
-          </div>
+          <p class="section__description">There are various accommodation options on site, including self-catered
+            cottages and B&Bs. Please note there are weddings on the days either side, and accommodation is not
+            reserved.</p>
+          <p class="section__description">There are various hotels, B&B's and cottage rentals within Tetbury and the
+            surrounding Cotswold villages. Tetbury itself is just a 10/15 minute walk from the venue. Malmesbury is 10
+            minutes away via car. There are also the larger towns of Stroud and Cirencester which are roughly a 25
+            minute drive away.</p>
         </div>
       </section>
       <section class="section">
-        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Local Taxi Services</span><span></span></h2>
+        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Local Taxi
+            Services</span><span></span></h2>
         <div class="section__content">
-          <div class="card-grid">
             <div class="card">
               <div class="card__inner-wrapper">
-                <h3 class="card__heading">A Taxi Company</h3>
                 <div class="detail">
-                  <div class="detail__label">Phone:</div>
-                  <div class="detail__value">01234 567890</div>
+                  <div class="detail__label">Pink Cabs (Tetbury):</div>
+                  <div class="detail__value"><a href="tel:079 6003 6003">079 6003 6003</a></div>
                 </div>
                 <div class="detail">
-                  <div class="detail__label">Website:</div>
-                  <div class="detail__value">
-                    <a target="_blank" href="https://example.com">taxi.example.com</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card__inner-wrapper">
-                <h3 class="card__heading">A Taxi Company</h3>
-                <div class="detail">
-                  <div class="detail__label">Phone:</div>
-                  <div class="detail__value">01234 567890</div>
+                  <div class="detail__label">Abbey Taxis (Malmesbury):</div>
+                  <div class="detail__value"><a href="tel:01666 823 366">01666 823 366</a></div>
                 </div>
                 <div class="detail">
-                  <div class="detail__label">Website:</div>
-                  <div class="detail__value">
-                    <a target="_blank" href="https://example.com">taxi.example.com</a>
-                  </div>
+                  <div class="detail__label">Reliance Taxis (Cirencester):</div>
+                  <div class="detail__value"><a href="tel:07787 790644">07787 790644</a></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </section>
       <section class="section">
-        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Gifts</span><span></span></h2>
+        <h2 class="section-heading linethrough"><span></span><span
+            class="linethrough__content">Gifts</span><span></span></h2>
         <div class="section__content">
-          <p class="section__description">Lorem ipsum</p>
+          <p class="section__description">Your presence is present enough and we are lucky to have everything in our
+            home that we need. But if you do wish to give, contributions to our honeymoon are always welcomed.</p>
         </div>
       </section>
     </main>
@@ -131,20 +83,27 @@ main {
   line-height: 1.6;
 }
 
-.detail {
-  margin-top: 1rem;
+.card {
+  width: fit-content;
+  margin: auto;
+}
+
+.detail:last-child {
+  margin-bottom: 0;
 }
 
 .detail__label {
-  width: 4rem;
+  width: 14rem;
 }
 
 .detail__value a {
   color: inherit;
 }
 
-@media screen and (max-width:768px) {
-
+@media screen and (max-width:600px) {
+  .detail {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width:500px) {
