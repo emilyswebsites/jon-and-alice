@@ -13,6 +13,7 @@
       <button class="scroll-button" @click="scrollPastHero()">
         <img src="down-arrow-circle.svg" alt="Scroll to schedule">
       </button>
+      <p class="photo-credit">*Our photographer is Lisa - "Ampersand Memories"</p>
     </div>
     <TopMenu ref="menu" hide-title></TopMenu>
     <main>
@@ -166,12 +167,12 @@ export default Vue.extend({
 
 .scroll-button {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translate(-50%);
   background: none;
   border: none;
-  filter: var(--shadow-subtle);
+  filter: drop-shadow(0px 0px 1px #81703840) drop-shadow(0px 0px 8px #81703820);
   cursor: pointer;
 
   img {

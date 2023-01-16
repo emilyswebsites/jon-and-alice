@@ -24,6 +24,7 @@
           <RsvpError v-if="currentStep === 'error'" :answers="answers"></RsvpError>
         </div>
       </div>
+      <p class="photo-credit">*Our photographer is Lisa - "Ampersand Memories"</p>
     </main>
     <PageFooter></PageFooter>
   </div>
@@ -165,6 +166,18 @@ main {
   background-position: center;
   padding: 4rem;
   min-height: 100vh;
+  position: relative;
+  padding-bottom: 1rem !important;
+}
+
+.photo-credit {
+  position: sticky;
+  top: calc(100vh - 3rem);
+  filter: drop-shadow(1px 1px 1px #000000);
+  margin-top: 1rem;
+  max-width: 50rem;
+  margin: 1rem auto 0;
+  padding-right: 0;
 }
 
 .card {
