@@ -13,7 +13,7 @@
           <RsvpNames v-if="currentStep === 'names'" :old-names="answers.guests" @set-names="setNames($event)">
           </RsvpNames>
           <RsvpMenu v-if="currentStep === 'menu'" :guest="answers.guests[currentGuestIndex]"
-            :is-last-guest="currentGuestIndex === answers.guests.length - 1" @set-menu-choices="setMenuChoices($event)">
+            :is-last-guest="currentGuestIndex === answers.guests.length - 1 || hasReachedSummary" @set-menu-choices="setMenuChoices($event)">
           </RsvpMenu>
           <RsvpDietaryRequirements v-if="currentStep === 'dietary'"
             :old-dietary-requirements="answers.dietaryRequirements"
@@ -150,8 +150,8 @@ export default Vue.extend({
       // TODO
       // Send an email
       // UI for 'sending in progress'
-      // this.showStep('complete')
-      this.showStep('error')
+      this.showStep('complete')
+      // this.showStep('error')
     }
   }
 })
@@ -161,7 +161,10 @@ export default Vue.extend({
 main {
   background-image: url("../static/photos/rsvp-image.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   padding: 4rem;
+  min-height: 100vh;
 }
 
 .card {
@@ -174,15 +177,18 @@ main {
   padding: 0;
 }
 
-@media screen and (max-width:768px) {}
-
-@media screen and (max-width:500px) {}
+@media screen and (max-width:768px) {
+  main {
+    padding: 4rem 2rem;
+  }
+}
 </style>
 
 <style lang="scss">
 .rsvp__section {
-  max-width: 40rem;
+  max-width: 42rem;
   margin: auto;
+  padding: 0 1rem;
 }
 
 .rsvp__form {
@@ -191,10 +197,22 @@ main {
   .form-field + .form-field {
     margin-top: 3rem;
   }
+
+  @media screen and (max-width: 768px) {
+    margin: 2rem 0 0;
+
+    .form-field + .form-field {
+      margin-top: 2rem;
+    }
+  }
 }
 
 .button--rsvp {
   margin: 4rem auto 0;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 2rem;
+  }
 }
 
 .subtitle {
@@ -208,9 +226,17 @@ main {
   display: flex;
   align-items: baseline;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
   label {
     margin-right: 1rem;
     font-size: 1.25rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   input[type=text],
@@ -223,6 +249,7 @@ main {
     font-size: 1.25rem;
     min-width: 0px;
     transition: border-color 150ms linear;
+    max-width: 100%;
 
     &:focus {
       border-color: var(--clr-beige-dark);
@@ -231,10 +258,16 @@ main {
 
   input[type=text] {
     flex-grow: 1;
+    width: 100%;
   }
 
   input[type=number] {
     width: 3rem;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   .radio__options {
@@ -250,12 +283,15 @@ main {
   .option {
     flex-grow: 1;
 
-    input[type="radio"] {
-      position: absolute;
+    input[type=radio] {
+      overflow: hidden;
       opacity: 0;
       cursor: pointer;
       height: 0;
       width: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
 
       + label {
         position: relative;

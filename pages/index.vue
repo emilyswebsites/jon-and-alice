@@ -244,10 +244,6 @@ export default Vue.extend({
     font-size: 1rem;
   }
 
-  .button {
-    font-size: 1rem;
-  }
-
   .schedule__event {
     flex-direction: column;
   }

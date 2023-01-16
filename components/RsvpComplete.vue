@@ -32,5 +32,9 @@ p {
   font-size: 1.25rem;
   text-align: center;
   line-height: 1.6;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 </style>

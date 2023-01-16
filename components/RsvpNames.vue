@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     formValid() {
-      if (!this.oldNames) {
+      if (!this.oldNames || this.oldNames.length === 0) {
         return +this.guestCount
         && !isNaN(+this.guestCount)
         && +this.guestCount > 0
@@ -87,5 +87,9 @@ export default {
 .guest__heading {
   font-family: var(--font-scripty);
   margin: 0;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: .5rem;
+  }
 }
 </style>

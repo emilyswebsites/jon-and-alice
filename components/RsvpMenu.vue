@@ -4,7 +4,7 @@
     <h3 class="guest-name linethrough"><span></span><span class="linethrough__content">{{ guest.name }}</span><span></span>
     </h3>
     <div class="menu">
-      <div class="form-field">
+      <div class="form-field form-field--radio">
         <label class="radio__label">Menu:</label>
         <div class="option">
           <input id="adult" v-model="menuType" value="adult" type="radio" name="menu-type" />
@@ -153,10 +153,14 @@ export default {
 
 <style scoped lang="scss">
 .guest-name {
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   * {
     font-family: var(--font-scripty);
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 1rem;
   }
 }
 
@@ -172,12 +176,16 @@ export default {
   display: block;
 
   .option {
-    margin-top: 1rem;
+    margin: .75rem 0;
+
+    @media screen and (max-width: 768px) {
+      margin: 0.5rem 0;
+    }
   }
 }
 
 .menu {
-  max-height: 15rem;
+  max-height: 14rem;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--clr-green-medium) var(--clr-beige-light);
@@ -203,5 +211,17 @@ export default {
 
 .option label {
   min-width: 8rem;
+}
+
+@media screen and (max-width: 500px) {
+  .subtitle {
+    font-size: .85rem;
+    font-family: var(--font-body);
+    text-align: left;
+  }
+
+  .rsvp__section {
+    padding: 0;
+  }
 }
 </style>

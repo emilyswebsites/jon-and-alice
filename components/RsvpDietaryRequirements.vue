@@ -37,6 +37,10 @@ export default {
 .rsvp__section {
   > * {
     margin-top: 2rem;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 1rem;
+    }
   }
 }
 
@@ -45,10 +49,14 @@ textarea {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   padding: .25rem .75rem;
-  height: 8rem;
+  height: 6rem;
   resize: none;
   border: 1px solid var(--clr-beige-medium);
   transition: border-color 150ms linear;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 
   &:focus {
     outline: none;
@@ -76,6 +84,10 @@ textarea {
 label, p {
   display: block;
   font-size: 1.25rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .button {

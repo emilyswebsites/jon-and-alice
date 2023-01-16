@@ -24,13 +24,25 @@ export default {
   padding: 3rem 0rem 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   .button {
     width: 12rem;
+    max-width: 100%;
 
     &:not(:last-child) {
       margin-right: 4rem;
+
+      @media screen and (max-width: 768px) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem 0rem 1rem;
   }
 }
 </style>

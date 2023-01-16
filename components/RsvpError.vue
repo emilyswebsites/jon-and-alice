@@ -73,11 +73,19 @@ export default {
 h3 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 }
 
 p {
   font-size: 1.25rem;
   line-height: 1.6;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .button {
@@ -105,6 +113,8 @@ p {
   left: 0;
   transform: translateY(calc(-.5rem - 100%));
   animation: copied 15000ms normal forwards linear;
+  cursor: default;
+  pointer-events: none;
 }
 
 @keyframes copied {
@@ -114,6 +124,14 @@ p {
 
   1% {
     opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.8;
   }
 
   100% {

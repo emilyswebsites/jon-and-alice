@@ -72,13 +72,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
+  --stitch-width: 1rem;
+  @media screen and (max-width: 500px) {
+    --stitch-width: 0.5rem;
+  }
+
   background-color: var(--clr-white);
-  border-radius: 1rem;
-  padding: 1rem;
+  border-radius: var(--stitch-width);
+  padding: var(--stitch-width);
   position: relative;
 
   .card__inner-wrapper {
-    border-radius: .5rem;
+    border-radius: calc(var(--stitch-width) / 2);
     border: 2px dashed var(--clr-beige-medium);
     padding: 1rem;
   }
@@ -157,6 +162,10 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   text-decoration: none;
   font-size: 1.25rem;
+
+  @media screen and (max-width:500px) {
+    font-size: 1rem;
+  }
 
   &:hover {
     background-color: var(--clr-green-dark);

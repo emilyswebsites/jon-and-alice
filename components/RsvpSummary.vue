@@ -53,6 +53,10 @@ export default {
   margin-top: 1.5rem;
   line-height: 1.4;
 
+  @media screen and (max-width: 768px) {
+    margin-top: 1rem;
+  }
+
   p {
     margin: 0;
   }
@@ -61,6 +65,10 @@ export default {
 .summary-row__content {
   flex-grow: 1;
   font-size: 1.25rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 em {
@@ -71,6 +79,11 @@ em {
 
 .dietary-requirements em {
   margin-left: 2rem;
+  display: block;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 1rem;
+  }
 }
 
 .edit-button {

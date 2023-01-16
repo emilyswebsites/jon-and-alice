@@ -229,4 +229,18 @@ li {
     font-size: 1rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  .mobile-header__icon {
+    height: 2rem;
+  }
+
+  .menu-icon {
+    padding: .25rem 0;
+  }
+}
 </style>

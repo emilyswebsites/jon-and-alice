@@ -8,7 +8,7 @@
         </label>
         <input id="names" v-model="names" type="text" name="names" spellcheck="false" />
       </div>
-      <div class="form-field">
+      <div class="form-field acceptance">
         <div class="option">
           <input id="accept" v-model="accept" :value="true" type="radio" name="accept" />
           <label for="accept">
@@ -64,5 +64,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@media screen and (max-width: 768px) {
+  .acceptance {
+    flex-direction: column;
 
+    .option + .option {
+      margin-top: 1rem;
+    }
+  }
+}
 </style>
