@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Petit+Formal+Script&family=Petrona&display=swap');
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -10,11 +12,12 @@ html {
   --font-heading: 'DM Serif Text', serif;
 
   --clr-white: #fff;
+  --clr-green-light: #60ca8e;
   --clr-green-medium: #008037;
   --clr-green-dark: #004d21;
 
-  --clr-beige-light: #F1EDE1;
-  --clr-beige-medium: #E8E2CD;
+  --clr-beige-light: #f1ede1;
+  --clr-beige-medium: #e8e2cd;
   --clr-beige-dark: #817038;
   --clr-beige-light-translucent: #f1ede1cc;
 
@@ -28,12 +31,21 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--clr-beige-dark);
-  background-image: linear-gradient(to top right, var(--clr-beige-light) 0%, var(--clr-beige-medium) 100%);
+  background-image: linear-gradient(
+    to top right,
+    var(--clr-beige-light) 0%,
+    var(--clr-beige-medium) 100%
+  );
   background-attachment: fixed;
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
 }
 
@@ -57,12 +69,13 @@ h1, h2, h3, h4, h5, h6 {
       flex: 1 0 auto;
       padding: 0 1em;
 
-      @media screen and (max-width:500px) {
-        padding: 0 .5em;
+      @media screen and (max-width: 500px) {
+        padding: 0 0.5em;
       }
     }
 
-    :first-child, :last-child {
+    :first-child,
+    :last-child {
       background-color: var(--clr-beige-dark);
       flex: 1 1 100%;
       height: 1px;
@@ -93,20 +106,21 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
     margin: 0;
 
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       font-size: 1.25rem;
     }
   }
 
-  &:before, &:after {
+  &:before,
+  &:after {
     z-index: -1;
     position: absolute;
-    content: "";
+    content: '';
     bottom: 15px;
     left: 10px;
     width: 50%;
     top: 80%;
-    max-width:300px;
+    max-width: 300px;
     background: #777;
     box-shadow: var(--shadow-card);
     transform: rotate(-3deg);
@@ -123,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   .card__inner-wrapper {
     padding: 1rem 2rem;
 
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       padding: 1rem;
     }
   }
@@ -144,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   font-size: 1.25rem;
 
-  @media screen and (max-width:500px) {
+  @media screen and (max-width: 500px) {
     font-size: 1rem;
   }
 
@@ -154,9 +168,47 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button--disabled {
-  &, &:hover {
+  &,
+  &:hover {
     background-color: var(--clr-beige-medium);
     cursor: default;
+  }
+}
+
+.button--loading {
+  position: relative;
+
+  &,
+  &:hover {
+    background-color: var(--clr-green-light);
+    cursor: default;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-green-light);
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    border: 0.25rem solid var(--clr-white);
+    border-right-color: #02aa4b00;
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 }
 
@@ -165,11 +217,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   padding: 0 1rem;
 
-  @media screen and (max-width:500px) {
+  @media screen and (max-width: 500px) {
     font-size: 2rem;
   }
 
-  @media screen and (max-width:450px) {
+  @media screen and (max-width: 450px) {
     font-size: 1.5rem;
   }
 }
@@ -228,5 +280,14 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem;
     text-align: center;
     width: 100%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

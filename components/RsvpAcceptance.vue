@@ -22,8 +22,8 @@
           </label>
         </div>
       </div>
-      <button class="button button--rsvp" :class="{ 'button--disabled': !names || accept === null }" type="submit"
-        :disabled="!names || accept === null">Continue</button>
+      <button class="button button--rsvp" :class="{ 'button--disabled': !names || accept === null, 'button--loading': loading }" type="submit"
+        :disabled="!names || accept === null || loading">Continue</button>
     </form>
   </div>
 </template>
@@ -49,6 +49,7 @@ export default {
     return {
       names: '',
       accept: null,
+      loading: false,
     }
   },
   created() {
@@ -57,6 +58,10 @@ export default {
   },
   methods: {
     submit() {
+      if (!this.accept) {
+        this.loading = true;
+      }
+
       this.$emit('acceptance-selected', { acceptance: this.accept, names: this.names });
     }
   }

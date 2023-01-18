@@ -13,7 +13,8 @@
           <RsvpNames v-if="currentStep === 'names'" :old-names="answers.guests" @set-names="setNames($event)">
           </RsvpNames>
           <RsvpMenu v-if="currentStep === 'menu'" :guest="answers.guests[currentGuestIndex]"
-            :is-last-guest="currentGuestIndex === answers.guests.length - 1 || hasReachedSummary" @set-menu-choices="setMenuChoices($event)">
+            :is-last-guest="currentGuestIndex === answers.guests.length - 1 || hasReachedSummary"
+            @set-menu-choices="setMenuChoices($event)">
           </RsvpMenu>
           <RsvpDietaryRequirements v-if="currentStep === 'dietary'"
             :old-dietary-requirements="answers.dietaryRequirements"
@@ -32,6 +33,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import emailjs from '@emailjs/browser';
 import TopMenu from '~/components/TopMenu.vue';
 import PageFooter from '~/components/PageFooter.vue';
 import RsvpInvitationType from '~/components/RsvpInvitationType.vue';
@@ -62,6 +64,7 @@ export default Vue.extend({
       currentStep: "invitation",
       currentGuestIndex: 0,
       hasReachedSummary: false,
+      sending: false,
       answers: {
         invitationType: '',
         names: '',
@@ -147,12 +150,21 @@ export default Vue.extend({
       this.editStep('menu');
     },
     submitRsvp() {
-      console.log("Submitting!");
-      // TODO
-      // Send an email
-      // UI for 'sending in progress'
-      this.showStep('complete')
-      // this.showStep('error')
+      if (!this.sending) {
+        this.sending = true;
+
+        // eslint-disable-next-line import/no-named-as-default-member
+        emailjs.send('service_q0y33om', 'template_0afdsxm', this.answers, 'user_A8BUHJt6PvRj76phtCVfz')
+          .then((result) => {
+            this.showStep('complete');
+            // eslint-disable-next-line no-console
+            console.log('Success', result.status, result.text);
+          }, (error) => {
+            this.showStep('error');
+            // eslint-disable-next-line no-console
+            console.log('Failed', error);
+          });
+      }
     }
   }
 })

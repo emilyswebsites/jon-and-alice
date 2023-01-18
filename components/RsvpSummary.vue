@@ -19,7 +19,7 @@
       <p v-if="!answers.dietaryRequirements" class="summary-row__content">{{ answers.invitationType === 'evening' ? 'I/we' : (answers.guests.length > 1 ? "We" : "I") }} have no allergies or specific dietary requirements.</p>
       <button class="edit-button" @click="editStep('dietary')"><img src="pencil.svg" alt="Edit dietary requirements" /></button>
     </div>
-    <button class="button" @click="submit()">Send!</button>
+    <button class="button" :class="{'button--loading': loading}" @click="submit()">Send!</button>
   </div>
 </template>
 
@@ -32,6 +32,11 @@ export default {
       required: true,
     }
   },
+  data() {
+    return {
+      loading: false,
+    }
+  },
   methods: {
     editStep(stepName) {
       this.$emit('edit-step', stepName);
@@ -40,6 +45,7 @@ export default {
       this.$emit('edit-menu-step', guestIndex);
     },
     submit() {
+      this.loading = true;
       this.$emit('submit-rsvp');
     }
   }
