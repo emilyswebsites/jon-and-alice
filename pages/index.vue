@@ -117,7 +117,7 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .hero {
-  background-image: url(/photos/hero-image.jpg);
+  background-image: url("../static/photos/hero-image.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
