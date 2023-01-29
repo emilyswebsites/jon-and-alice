@@ -120,9 +120,8 @@ export default Vue.extend({
   background-image: url("../static/photos/hero-image.jpg");
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
   padding: 5rem 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
