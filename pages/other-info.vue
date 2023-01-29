@@ -6,7 +6,7 @@
         <h2 class="section-heading linethrough"><span></span><span
             class="linethrough__content">Accommodation</span><span></span></h2>
         <div class="section__content">
-          <p class="section__description">There are various accommodation options on site, including self-catered
+          <p class="section__description">There are some accommodation options on site, including self-catered
             cottages and B&Bs. Please note there are weddings on the days either side, and accommodation is not
             reserved.</p>
           <p class="section__description">There are various hotels, B&B's and cottage rentals within Tetbury and the
@@ -19,23 +19,23 @@
         <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Local Taxi
             Services</span><span></span></h2>
         <div class="section__content">
-            <div class="card">
-              <div class="card__inner-wrapper">
-                <div class="detail">
-                  <div class="detail__label">Pink Cabs (Tetbury):</div>
-                  <div class="detail__value"><a href="tel:079 6003 6003">079 6003 6003</a></div>
-                </div>
-                <div class="detail">
-                  <div class="detail__label">Abbey Taxis (Malmesbury):</div>
-                  <div class="detail__value"><a href="tel:01666 823 366">01666 823 366</a></div>
-                </div>
-                <div class="detail">
-                  <div class="detail__label">Reliance Taxis (Cirencester):</div>
-                  <div class="detail__value"><a href="tel:07787 790644">07787 790644</a></div>
-                </div>
+          <div class="card">
+            <div class="card__inner-wrapper">
+              <div class="detail">
+                <div class="detail__label">Pink Cabs (Tetbury):</div>
+                <div class="detail__value"><a href="tel:079 6003 6003">079 6003 6003</a></div>
+              </div>
+              <div class="detail">
+                <div class="detail__label">Abbey Taxis (Malmesbury):</div>
+                <div class="detail__value"><a href="tel:01666 823 366">01666 823 366</a></div>
+              </div>
+              <div class="detail">
+                <div class="detail__label">Reliance Taxis (Cirencester):</div>
+                <div class="detail__value"><a href="tel:07787 790644">07787 790644</a></div>
               </div>
             </div>
           </div>
+        </div>
       </section>
       <section class="section">
         <h2 class="section-heading linethrough"><span></span><span
@@ -43,6 +43,15 @@
         <div class="section__content">
           <p class="section__description">Your presence is present enough and we are lucky to have everything in our
             home that we need. But if you do wish to give, contributions to our honeymoon are always welcomed.</p>
+        </div>
+      </section>
+      <section class="section">
+        <h2 class="section-heading linethrough"><span></span><span class="linethrough__content">Additional
+            Information</span><span></span></h2>
+        <div class="section__content">
+          <p class="section__description">Please note, as the venue is licensed, guests are not allowed to bring their
+            own alcohol to the barn. The venue only allows natural petals, not confetti - we will be providing plenty of
+            petals to throw.</p>
         </div>
       </section>
     </main>

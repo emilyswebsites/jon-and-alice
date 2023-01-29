@@ -26,10 +26,6 @@
           <label for="ham-hock">Ham hock and leek terrine, served with toasted brioche</label>
         </div>
         <div class="option">
-          <input id="arancini" v-model="starter" value="three cheese arancini" type="radio" name="starter" />
-          <label for="arancini">Three cheese arancini (V, VeO)</label>
-        </div>
-        <div class="option">
           <input id="bruschetta" v-model="starter" value="bruschetta" type="radio" name="starter" />
           <label for="bruschetta">Traditional bruschetta, crostini topped with chopped tomatoes and a basil oil dressing
             with mozzarella (V, VeO)</label>
