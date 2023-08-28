@@ -15,11 +15,6 @@ export default {
       required: true,
     }
   },
-  methods: {
-    submit() {
-      this.$emit('submit-rsvp');
-    }
-  }
 }
 </script>
 

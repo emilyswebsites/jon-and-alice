@@ -25,6 +25,7 @@
           <RsvpError v-if="currentStep === 'error'" :answers="answers"></RsvpError>
         </div>
       </div>
+      <p class="form-caption">This form no longer sends an RSVP to the bride and groom as the wedding has already taken place!<br/>It is now free to be used for demonstration purposes.</p>
       <p class="photo-credit">*Our photographer is Lisa - "Ampersand Memories"</p>
     </main>
     <PageFooter></PageFooter>
@@ -33,7 +34,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import emailjs from '@emailjs/browser';
 import TopMenu from '~/components/TopMenu.vue';
 import PageFooter from '~/components/PageFooter.vue';
 import RsvpInvitationType from '~/components/RsvpInvitationType.vue';
@@ -153,17 +153,9 @@ export default Vue.extend({
       if (!this.sending) {
         this.sending = true;
 
-        // eslint-disable-next-line import/no-named-as-default-member
-        emailjs.send('service_q0y33om', 'template_0afdsxm', this.answers, 'user_A8BUHJt6PvRj76phtCVfz')
-          .then((result) => {
-            this.showStep('complete');
-            // eslint-disable-next-line no-console
-            console.log('Success', result.status, result.text);
-          }, (error) => {
-            this.showStep('error');
-            // eslint-disable-next-line no-console
-            console.log('Failed', error);
-          });
+        window.setTimeout(() => {
+          this.showStep('complete');
+        }, 750)
       }
     }
   }
@@ -180,6 +172,15 @@ main {
   min-height: 100vh;
   position: relative;
   padding-bottom: 1rem !important;
+}
+
+.form-caption {
+  font-size: 1rem;
+  color: #fff;
+  filter: drop-shadow(0px 0px 8px #000b) drop-shadow(1px 1px 1px #000);
+  max-width: 48rem;
+  margin: 1rem auto;
+  text-align: center;
 }
 
 .photo-credit {
